@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-brand" href="{%url 'index'%}">Index</a></li>
+
+
+          <li><a class="navbar-link" href="{%url 'logout'%}">Logout</a></li>
+              <li><a class="navbar-link" href="{%url 'sample:change_password'%}">Change Password</a></li>
+
+          <li><a class="navbar-link" href="{%url 'sample:edit_profile' %}">Edit Profile</a></li>
+        </ul>
+
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <h1>Profile Info</h1>
+      {% if user.userformmodel.profile_pic %}
+       <img src="{{user.userformmodel.profile_pic.url}}" width="200">
+      {%endif%}
+      <p>Username: {{user}}</p>
+      <p>Email: {{user.email}}</p>
+
+      <p>Portfolio: {{user.userformmodel.portfolio}}</p>
+
+
+    </div>
+    
+  </body>
+</html>

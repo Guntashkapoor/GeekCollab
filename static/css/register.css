@@ -1,0 +1,141 @@
+body{
+  background: #F3F7F7;
+  text-align: center;
+  animation: fade 0.5s;
+}
+.headtext{
+  font-family: 'Lobster', cursive;
+
+  line-height: 1.3;
+  color: #00CCCC;
+}
+#ht0{
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+#ht1{
+  color: black;
+  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+#ht2{
+  color:black;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom:3rem;
+
+}
+#geek-part
+{
+ font-family: 'Source Code Pro', monospace;
+}
+.register{
+  background-color: white;
+  width:30rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  border-top: 4px solid #00CCCC;
+  text-align: center;
+  margin-bottom: 10rem;
+  height: 48rem;
+}
+.helptext{
+  position: absolute;
+  opacity: 0;
+}
+.header{
+  position: relative;
+
+}
+.cross{
+  font-size: 1rem;
+  position: absolute;
+  top:0;
+  right:5px;
+  color: #00CCCC;
+
+}
+.sign{
+  font-family: 'Lobster', cursive;
+    color: #00CCCC;
+    font-size: 2.3rem;
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.regbtn{
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  color: #00CCCC;
+  border: 2px solid #00CCCC;
+  transition: 0.6s;
+  background-color: white;
+}
+
+.regbtn:hover{
+  background: #00CCCC;
+  color:white;
+}
+
+.form label{
+  position: absolute;
+  opacity: 0;
+}
+.form input{
+  padding: 5px;
+  width:15rem;
+  border:1px solid #00CCCC;
+  border-radius: 5px;
+}
+#id_stream{
+  padding: 5px;
+  width:15rem;
+  border:1px solid #00CCCC;
+  border-radius: 5px;
+  color:#757575;
+}
+#id_skills{
+  padding: 5px;
+  width:15rem;
+  border:1px solid #00CCCC;
+  border-radius: 5px;
+  height: 8rem;
+}
+.hello{
+  background: red;
+}
+#thanks{
+    color:hsl(229, 6%, 66%);
+}
+
+
+@media (max-width: 1028px)
+{
+  .register{
+    width:18rem;
+  }
+  #ht0{
+    font-size:2rem;
+  }
+  #ht1{
+    font-size: 1.2rem;
+  }
+  #ht2{
+    font-size:0.9rem;
+  }
+  #thanks{
+    font-size: 1.9rem;
+  }
+}

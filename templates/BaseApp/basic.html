@@ -1,0 +1,63 @@
+<!doctype html>
+{% load static   %}
+<html lang="en">
+
+<head>
+  <!-- REQUIRED META TAGS-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--GOOGLE FONTS EMBEDDED LINK-->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;500;800&family=Ubuntu+Condensed&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <!--FONTAWESOME EMBEDDED LINK-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!-- BOOTSTRAP CSS EMBEDDED LINK-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/sample.css' %}"/>
+  <title>Home</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!--NavBar Code-->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#"><span id="geek-part">Geeks</span>Collab</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{%url 'index'%}">Home</a>
+          </li>
+            {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'logout'%}">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'profile'%}">Profile</a>
+          </li>
+          {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'sample:register'%}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'sample:user_login' %}">Login</a>
+          </li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+    <div class="container">
+      {%block body_block%}
+
+      {%endblock%}
+
+    </div>
+
+  </body>
+</html>

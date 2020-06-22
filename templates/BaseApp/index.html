@@ -1,0 +1,173 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <!--STYLE TAGE -->
+  <style >
+    html,body{
+    overflow-x: hidden;
+    width:100%;
+    height:100%;
+    padding: 0;
+    margin: 0;}
+
+    .infopic{
+
+      max-width: 100%;
+    height: auto;
+    }
+  </style>
+  <!-- REQUIRED META TAGS-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--GOOGLE FONTS EMBEDDED LINK-->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;500;800&family=Ubuntu+Condensed&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <!--FONTAWESOME EMBEDDED LINK-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!-- BOOTSTRAP CSS EMBEDDED LINK-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/sample.css' %}"/>
+  <title>Home</title>
+</head>
+
+<body>
+
+  <!--SECTION 1-->
+  <section class="title">
+    <div class="container-fluid">
+      <!--NavBar Code-->
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><span id="geek-part">Geeks</span>Collab</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="{%url 'index'%}">Home</a>
+            </li>
+              {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'logout'%}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'profile'%}">Profile</a>
+            </li>
+            {% else %}
+
+            <li class="nav-item">
+              <a class="nav-link"  href="{%url 'sample:register'%}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'sample:user_login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+
+        </div>
+      </nav>
+      <!--Bootstrap grid system implementation in title section-->
+      <div class="row secA">
+        <div class="col-lg-6">
+          <h1 class="class-head">Let's Build together!</h1>
+          <br>
+          <button type="button" class="btn btn-dark title-but">Get Started</button>
+          <button type="button" class="btn btn-outline-light title-but">Sign Up</button>
+        </div>
+        <div class="col-lg-6">
+          <img class="conect" src="{% static 'images/conect.png' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--SECTION 2-->
+  <section class="intro">
+
+    <h2 class="introhead">What is GeeksCollab?</h2>
+    <p class="introcnt">Many times we encounter a problem of not having appropriate and like minded people around us with whom we can work on interesting projects. This hinders your growth. But this will bother you no more . Geek collab helps you to find like minded peers , interact with them freely and form teams. Share your experiences with us through our technical blog. Group chats and blog help you to gain knowledge you need to work on a project. So what's stopping you. Lets build together</p>
+    <!--features in card format -->
+
+    <div class="row">
+      <!--card 1 code-->
+      <div class="col-md-6 col-lg-4">
+        <div class="card c1">
+
+          <i class="fas fa-check-circle fas1 ic1"></i>
+
+          <div class="card-body">
+            <h3 class="cardhead">Easy to use</h3>
+            <hr>
+            <p class="cardcnt">Our website is specially designed keeping your ease of operability in our mind. We are offering you Handy options, precise search filters and many other functionalities .</p>
+          </div>
+        </div>
+      </div>
+      <!--card 2 code-->
+      <div class="col-md-6 col-lg-4">
+        <div class="card c2">
+
+          <i class="fas fa-bullseye fas1 ic2"></i>
+
+          <div class="card-body">
+            <h3 class="cardhead">Gain experience and Learn </h3>
+            <hr>
+            <p class="cardcnt">Technical world revolves around sharing your experiences and learning from others mistakes. That's why we have a technical blog contributed by our users where you can share your experiences and learn from others too.</p>
+          </div>
+        </div>
+      </div>
+      <!--card 3 code-->
+      <div class="col-md-12 col-lg-4">
+        <div class="card c3">
+
+          <i class="fas fa-network-wired fas1 ic3 "></i>
+
+          <div class="card-body">
+            <h3 class="cardhead">Connect and Interact</h3>
+            <hr>
+            <p class="cardcnt">Connect with like minded people ,form team , interact in groups and make awesome projects.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--inforgraphic section-->
+    <div class="infopicsec">
+      <h2 class="introhead" id="inth">Get an amazing experience with us just in 4 simple steps</h2>
+      <br><br><br>
+      <img class="infopic"src="{% static 'images/Secured_sign_up_and_login.png'%}" width="600" height="400" alt="">
+    </div>
+  </section>
+
+  <!--SECTION 3-->
+  <section class="tour">
+    <h2 class="introhead head2">How this platform works?</h2>
+
+    <button class="explorebtn" type="button" name="button">Explore the Platform <i class="fas fa-arrow-right arw"></i></button>
+  </section>
+
+  <!--WEBSITE FOOTER CODE-->
+  <footer id="footer">
+    <i class="social-icon fab fa-facebook-f"></i>
+    <i class="social-icon fab fa-twitter"></i>
+    <i class="social-icon fab fa-instagram"></i>
+    <i class="social-icon fas fa-envelope"></i>
+    <p class="cpy">© Copyright 2020 GeeksCollab </p>
+    <br><br>
+  </footer>
+
+
+
+
+
+  </script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

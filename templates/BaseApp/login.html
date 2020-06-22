@@ -1,0 +1,67 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <!-- REQUIRED META TAGS-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--GOOGLE FONTS EMBEDDED LINK-->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;500;800&family=Ubuntu+Condensed&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <!--FONTAWESOME EMBEDDED LINK-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!-- BOOTSTRAP CSS EMBEDDED LINK-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  <title>SignIn</title>
+</head>
+
+<body>
+
+
+  <h1 class="headtext" id="ht0"> <span id="geek-part">Geeks</span>Collab </h1>
+  <h2 class="headtext" id="ht1">For Collaborations</h2>
+  <h5 class="headtext" id="ht2">Make your group for projects and Startup and much more.</h5>
+  <div class="login">
+    <div class="header">
+      <h2 class="sign">SignIn</h2>
+      <a class="cross" href="{%url 'index'%}"><i class="fas fa-times"></i> </a>
+    </div>
+
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <form  class="form"action="{% url 'sample:user_login' %}" method="POST">
+      {%csrf_token%}
+
+
+      <p><input type="text" name="username" placeholder="Username"></p>
+
+
+      <p><input type="password" name="password" placeholder="Password"></p>
+
+    <button type="submit" class="lgbtn">Login</button>
+      <br>
+
+      <a href="{%url 'sample:register'%}" style="color:black;">Don't have an account?</a>
+
+    </form>
+  </div>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
